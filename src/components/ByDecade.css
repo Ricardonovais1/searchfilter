@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+:root {
+    --main-font: font-family: 'Source Sans Pro', sans-serif;
+    --color-one-dark: #272934;
+    --color-green: #02a66a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header {
+    background-color: var(--color-one-dark);
+    padding: 2rem 1rem;
+    margin-bottom: 1rem;
+    color: aliceblue;
+}
+
+body {
+    background-color: azure;
+}
+
+.nameInput {
+    width: 25%;
+    border: 1px solid var(--color-one-dark);
+    border-radius: .5rem;
+    padding: .7rem;
+    font-size: 1.2rem;
+    margin-right: .5rem;
+}
+
+.inputButton {
+    background-color: var(--color-green);
+    color: aliceblue;
+    font-weight: 600;
+    border: none;
+    border-radius: .5rem;
+    padding: .7rem;
+    font-size: 1.2rem;
+    margin-right: .5rem;
+}
+
+.tableTitle {
+    margin: 1rem 1rem;
+}
+
+h1,
+p {
+    font-family: var(--main-font);
+    text-transform: uppercase;
+}
+
+.names {
+    list-style: none;
+}
+
+.names li {
+text-align: left;
+}
+
+th,
+td {
+    /* width: 200px; */
+    width: 20%;
+    text-align: center;
+    font-family: var(--main-font);
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+th {
+    background-color: var(--color-one-dark);
+    color: aliceblue;
+    font-size: 1.3rem;
+}
+
+table {
+    margin: 0 auto;
+    width: 70%;
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+    table {
+        width: 80%
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    table {
+        width: 90%
+    }
+}
