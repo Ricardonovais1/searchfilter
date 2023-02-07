@@ -64,7 +64,6 @@ text-align: left;
 
 th,
 td {
-    /* width: 200px; */
     width: 20%;
     text-align: center;
     font-family: var(--main-font);
@@ -92,12 +91,12 @@ table {
 
 @media (min-width: 601px) and (max-width: 900px) {
     table {
-        width: 80%
+        width: 80%;
     }
 }
 
 @media only screen and (max-width: 600px) {
     table {
-        width: 90%
+        width: 90%;
     }
 }
