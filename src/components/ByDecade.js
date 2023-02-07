@@ -13,13 +13,16 @@ const ByDecade = ({ decade,
 
     const inputGeneral = useRef(null);
 
+    const modifyFrequency = (frequency) => {
+        console.log(frequency)
+    }
+
     return (
-    <div>
+    <div className='compBody'>
         <header>
             <h1>Ranking de nomes por década</h1>
             <p>Consulte por década (1930 - 2010):</p>
         </header>
-        <body>
         <form onSubmit={handleSubmit}>
             <input
                 className='nameInput'
@@ -36,31 +39,28 @@ const ByDecade = ({ decade,
             </button>
         </form>
         {clicked && <p className='tableTitle'>Ranking de nomes para a década de {decade}</p>}
-        {error ? (
-        <div>{error}</div>
-        ) : (
-            <div className='namesContainer'>
-
-                <table align='center'>
-                {clicked &&
+        <div className='namesContainer'>
+            <table align='center'>
+            {clicked &&
+                <thead>
                     <tr>
                         <th align='left'>Ranking</th>
                         <th align='left'>Nome</th>
                         <th align='left'>Ocorrências</th>
                     </tr>
-                }
-                    {names.map((item, index) => (
-                    <tr key={index}>
+                </thead>
+            }
+                {names.map((item, index) => (
+                <tbody key={index}>
+                    <tr>
                         <td align='left'>{item.ranking}º</td>
                         <td align='left'>{item.nome}</td>
-                        <td align='left'>{item.frequencia}</td>
+                        <td align='left'>{modifyFrequency(item.frequencia)}</td>
                     </tr>
-                    ))}
-                </table>
-            </div>
-        )}
-        </body>
-
+                </tbody>
+                ))}
+            </table>
+        </div>
     </div>
   )
 }

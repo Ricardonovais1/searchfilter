@@ -6,7 +6,6 @@ function App() {
 
   const [decade, setDecade] = useState('');
   const [names, setNames] = useState([]);
-  const [error, setError] = useState(null);
   const [clicked, setClicked] = useState(false);
 
 
@@ -30,7 +29,6 @@ function App() {
     }
   }
 
-
   return (
     <div className="App">
       <ByDecade
@@ -40,7 +38,6 @@ function App() {
         handleButtonClick={handleButtonClick}
         clicked={clicked}
         names={names}
-        error={error}
       />
     </div>
   );
