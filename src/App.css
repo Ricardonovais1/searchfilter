@@ -7,6 +7,21 @@
   pointer-events: none;
 }
 
+/* .namesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 30vw;
+} */
+
+.names {
+  list-style: none;
+}
+
+.names li {
+  text-align: left;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
