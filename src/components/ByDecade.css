@@ -48,7 +48,11 @@ body {
     margin: 1rem 1rem;
 }
 
-h1,
+h1 {
+    font-family: var(--main-font);
+    text-transform: uppercase;
+}
+
 p {
     font-family: var(--main-font);
     text-transform: uppercase;
