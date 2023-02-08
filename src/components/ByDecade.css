@@ -50,11 +50,11 @@ header {
     margin: 1rem 1rem;
 }
 
-h1,
+/* h1,
 p {
     font-family: 'Source Sans Pro', sans-serif;
     text-transform: uppercase;
-}
+} */
 
 .names {
     list-style: none;
