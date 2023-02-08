@@ -12,10 +12,19 @@ const ByDecade = ({ decade,
                 }) => {
 
     const inputGeneral = useRef(null);
-
     const modifyFrequency = (frequency) => {
-        console.log(frequency)
-    }
+        let str = frequency.toString();
+        let result = '';
+
+        for (let i = 0; i < str.length; i++) {
+          if (i > 0 && (str.length - i) % 3 === 0) {
+            result += '.';
+          }
+          result += str[i];
+        }
+        return result;
+      }
+
 
     return (
     <div className='compBody'>

@@ -2,6 +2,9 @@
 
 :root {
     --main-font: font-family: 'Source Sans Pro', sans-serif;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --color-one-dark: #272934;
+    --transition: all 0.3s linear;
 }
 
 
@@ -13,37 +16,116 @@ table {
   align-self: center;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  gap: 20%;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.menu {
+  display: flex;
+
+}
+
+.hide {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.nav-item {
+  color: var(--color-one-dark);
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-transform: uppercase;
+  display: block;
+  padding: 0.5rem 1rem;
+}
+
+@media screen and (max-width: 799px) {
+
+  /*
+===============
+Navbar
+===============
+*/
+  nav {
+    background: white;
+    box-shadow: var(--light-shadow);
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-header {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    /* padding: 1rem; */
   }
+
+  .logo {
+    justify-self: flex-start;
+    margin-left: 1.5rem;
+    margin-right: 30vw;
+    height: 40px;
+  }
+
+
+  .nav-toggle {
+    justify-self: flex-end;
+    font-size: 1.5rem;
+    color: var(--color-one-dark);
+    background: transparent;
+    border-color: transparent;
+    transition: var(--transition);
+    cursor: pointer;
+  }
+
+  .nav-toggle:focus {
+    color: var(--clr-primary-1);
+    /* transform: rotate(90deg); */
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .app-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: .5rem 1rem; */
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
 }
