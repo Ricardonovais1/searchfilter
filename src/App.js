@@ -1,6 +1,6 @@
 import './App.css';
 import logo from './img/logo.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ByDecade from './components/ByDecade';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -10,11 +10,19 @@ function App() {
   const [decade, setDecade] = useState('');
   const [names, setNames] = useState([]);
   const [clicked, setClicked] = useState(false);
-  const [isActive, setIsActive] = useState(false);
+  const [isActive, setIsActive] = useState(window.innerWidth > 799);
 
-  const handleMenu = () => {
-    setIsActive(!isActive);
-  }
+  useEffect(() => {
+    const handleResize = () => {
+      setIsActive(window.innerWidth > 799);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
 
   const handleSubmit = (e) => {
@@ -40,16 +48,14 @@ function App() {
   return (
     <div className="App">
       <nav className='app-header'>
-        <div className="nav-center">
           <div className="nav-header">
             <span>
                <img src={logo} alt="logo" className='logo' />
             </span>
-            <button className='nav-toggle' onClick={handleMenu}>
+            <button className='nav-toggle' onClick={() => setIsActive(!isActive)}>
                <FontAwesomeIcon icon={faBars} />
             </button>
           </div>
-        </div>
         <ul className={`${isActive ? "menu" : "hide"}`}>
           <li className='nav-item'>Home</li>
           <li className='nav-item'>Decade</li>
